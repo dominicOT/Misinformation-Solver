@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Misinformation Solver - Home Page </title>
+
+
+</head>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+
+    html{
+    scroll-behavior: smooth;
+}
+
+    * {
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    body {
+        text-align: center;
+        /* width: 700px; */
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #f6f6f6;
+    }
+
+    body, h1, p, ul {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    h1 {
+        font-size: 2.1rem;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin: 1rem 0 1.5rem;
+        letter-spacing: .02em;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 100;
+        margin: 1rem 0;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        letter-spacing: .02em;
+        text-transform: none;
+        line-height: 1.8;
+    }
+
+    .para p {
+        text-align: justify;
+    }
+    
+    a {
+            text-decoration: none;
+            color: peru;
+        }
+
+
+    header {
+        background-color: #f8f9fa;
+    }
+
+
+
+
+
+    .max-width{
+        max-width: 1300px;
+        padding: 0 80px;
+        margin: auto;
+    }
+
+
+    .navbar{
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        padding: 30px 0;
+        font-family: 'Ubuntu', sans-serif;
+        transition: all 0.3s ease;
+        background-color: #5e6d7c;
+    }
+    .navbar.sticky{
+        padding: 15px 0;
+        background: #3578bb;
+    }
+    .navbar .max-width{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar .logo a{
+        color: #fff;
+        font-size: 35px;
+        font-weight: 600;
+    }
+    .navbar .logo a span{
+        color: #df9636;
+        transition: all 0.3s ease;
+    }
+    .navbar.sticky .logo a span{
+        color: #fff;
+    }
+    .navbar .menu li{
+        list-style: none;
+        display: inline-block;
+    }
+    .navbar .menu li a{
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 25px;
+        transition: color 0.3s ease;
+    }
+    .navbar .menu li a:hover{
+        color: #df9636;
+    }
+    .navbar.sticky .menu li a:hover{
+        color: #df9636;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #intro {
+        /* display: flex; */
+        color: #3578bb;
+        min-height: 200px;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+
+    .intro-container {
+        padding-top: 20px;
+        text-align: left;
+        /* max-width: 960px; */
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .intro-container h1 {
+        font-size: 4rem;
+    }
+
+    .intro-cont p {
+        font-size: 1.5rem;
+    }
+
+    .foot-cont {
+        /* max-width: 960px; */
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    #article {
+        text-align: center;
+        padding-left: 150px;
+        padding-right: 150px;
+        background-color: #f6f6f6;
+    }
+
+    section {
+        display: block;
+        word-wrap: break-word;
+    }
+
+    .actions {
+        margin: 20px;
+    }
+    
+
+
+
+    .form-container {
+        background-color: #df9636;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        padding-left: 18px;
+        padding-right: 18px;
+        border-radius: 12px;
+    }
+
+
+    /* padding-left: 1.25rem; */
+    .floating-form .form-input {
+    	background-color: #5e6d7c;
+    	border-radius: 0;
+    	background-color: #f6f6f6;
+    	color: #000000;
+        height: 2rem;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 9px;
+        padding-right: 9px;
+        border-radius: 2px;
+    }
+
+    .report-btn {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #df9636;
+        color: #fff;
+        border-radius: 7px;
+        border-style: none;
+        margin-top: -7px;
+    }
+
+    .submit-button {
+	    /* display: inline-block; */
+	    width: 100%;
+	    height: 3.625rem;
+	    border: 1px solid #5e6d7c;
+	    border-radius: 32px;
+	    background-color: #3578bb;
+	    color: #ffffff;
+	    font-weight: 400;
+	    line-height: 0;
+	    cursor: pointer;
+	    transition: all 0.2s;
+    }
+
+    .form1 .submit-button {
+        width: 22rem;
+        margin-top: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 1.1rem;
+    }
+
+    .submit-button:hover {
+    	border: 1px solid #5e6d7c;
+    	background-color: transparent;
+    	color: #3578bb;
+    }
+
+
+    .form1 {
+    	padding-top: 4.25rem;
+    	padding-bottom: 8.5rem;
+    	text-align: center;
+    }
+
+    .form1 .p-heading {
+    	margin-bottom: 3rem;
+    }
+
+	.form1 .form-input {
+		width: 20rem;
+
+	}
+
+
+
+    footer {
+        margin-top: 15px;
+        background-color: #5e6d7c;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+</style>
+
+
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="{% url 'index' %}">Misinformation<span>Solver.</span></a></div>
+            <ul class="menu">
+                <li><a href="{% url 'index' %}" class="menu-btn">Home</a></li>
+                <li><a href="{% url 'about' %}" class="menu-btn">About</a></li>
+                <li><a href="{% url 'join' %}" class="menu-btn">Join</a></li>
+        </div>
+    </nav>
+
+
+    <div class="intro-cont">
+        <h1> Misinformation Solver </h1>
+        <p> Unraveling the Truth: Your Misinformation Problem Solver </p>
+    </div>
+
+
+    <div class="join">
+        <h1> Join The Fight! </h1>
+        <p> Unraveling the Truth: Your Misinformation Problem Solver </p>
+        <p> Join us in the fight against Misinformation:</p>
+    </div>
+
+    <div class="actions">
+        <center>
+        <h1 style="
+            font-size: 5rem;
+            background-color: #3578bb;
+            color: #df9636;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            line-height: 2.4;
+            "><strong>1</strong></h1>
+            </center>
+            <p> Report any rumor and fake news you come accross to any media-governing law agency. <strong> Report as many times as you want. </strong> </p>
+            <button class="report-btn">Report</button>
+    </div>
+
+    <div>
+        <center>
+        <h1 style="
+            font-size: 5rem;
+            background-color: #3578bb;
+            color: #df9636;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            line-height: 2.4;
+            "><strong>2</strong></h1>
+            </center>
+            <p> If you see any information that is false / not accurate on your social media, <strong> don't share. </strong> </p>
+            
+    </div>
+
+
+    <hr>
+
+
+
+
+<section id="article">
+    <div class="form1">
+        <div class="form-container">
+            <div>
+                <div>
+                    <h2 class="h2-heading">Subscribe And Join</h2>
+                <p> Subscribe to our weekly newsletter and join the rally against misinformation. </p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <form>
+                        <div class="floating-form">
+                            <input type="email" class="form-input" placeholder="user@example.com" name="subMail">
+                            <!-- <label>Email address</label> -->
+                        </div>
+                        <button type="submit" class="submit-button">Submit</button>
+                    </form>
+                </div> 
+            </div> 
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+</body>
+
+
+
+<footer class="footer">
+        <div class="foot-cont">
+            <p> &copy; 2023 <a href="{% url 'index' %}"> Misinformation Solver. </a> All rights reserved. </p>
+        </div>
+    </footer>
+
+    
+
+
+
+
+<script>
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if(this.scrollY > 20){
+            $('.navbar').addClass("sticky");
+        }else{
+            $('.navbar').removeClass("sticky");
+        }
+        
+        if(this.scrollY > 500){
+            $('.scroll-up-btn').addClass("show");
+        }else{
+            $('.scroll-up-btn').removeClass("show");
+        }
+    });
+});
+
+</script>
+</html>
